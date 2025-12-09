@@ -2,8 +2,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./BeforeAfter.css";
-import BeforeImage from "../../../assets/Home/BeforeAfter/before.png";
-import AfterImage from "../../../assets/Home/BeforeAfter/after.png";
+import BeforeImage from "../../../assets/Home/BeforeAfter/Before.png";
+import AfterImage from "../../../assets/Home/BeforeAfter/After.png";
 import Divider from '../../../ui/Divider/Divider'
 
 function BeforeAfter() {
@@ -155,7 +155,7 @@ function BeforeAfter() {
           </Link>
         </div>
       </div>
-    <Divider />
+      <Divider />
     </section>
   );
 }
