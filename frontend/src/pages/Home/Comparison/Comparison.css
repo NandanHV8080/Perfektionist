@@ -1,0 +1,263 @@
+/* Comparison Section Base */
+.comparison-section {
+  background: #050014;
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.comparison-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 0rem;
+}
+
+/* Scroll reveal (Infos-style) */
+.reveal-comp {
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(6px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.65, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.65, 0.2, 1),
+    filter 0.8s cubic-bezier(0.2, 0.65, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 85ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-comp.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Header */
+.comparison-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.comparison-tag {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.comparison-header h2 {
+  font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+  margin: 0.5rem 0 0.8rem;
+  color: var(--primary-color);
+}
+
+.comparison-lead {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Pills (labels above cards) */
+.comparison-pill-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+  margin-bottom: 1.8rem;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(127, 0, 255, 0.2);
+}
+
+.pill-perf {
+  background: radial-gradient(
+      circle at top left,
+      rgba(127, 0, 255, 0.35),
+      transparent 55%
+    ),
+    #05000f;
+  border-color: rgba(127, 0, 255, 0.8);
+}
+
+.pill-other {
+  background: #05000f;
+  opacity: 0.6;
+}
+
+.pill-label-main {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.pill-label-sub {
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+/* Cards layout */
+.comparison-cards {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+/* Individual card */
+.comp-card {
+  border-radius: 18px;
+  padding: 1.6rem 1.4rem 1.5rem;
+  background: #05000f;
+  border: 1px solid rgba(127, 0, 255, 0.35);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+}
+
+.perf-card {
+  background: radial-gradient(
+      circle at top left,
+      rgba(127, 0, 255, 0.24),
+      transparent 58%
+    ),
+    #05000f;
+}
+
+.other-card {
+  opacity: 0.7;
+}
+
+.comp-card .card-header h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.comp-card .card-header p {
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+/* Comparison list */
+.comp-list {
+  list-style: none;
+  margin: 1.3rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comp-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.comp-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+.comp-icon.good {
+  background: rgba(34, 197, 94, 0.16);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.7);
+}
+
+.comp-icon.bad {
+  background: rgba(220, 38, 38, 0.18);
+  color: #ef4444;
+  border: 1px solid rgba(220, 38, 38, 0.7);
+}
+
+.comp-text {
+  font-size: 0.9rem;
+}
+
+.comp-label {
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+.comp-detail {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.other-detail {
+  color: #c9c9c9;
+}
+
+/* Urgency strip */
+.comparison-urgency {
+  margin-top: 3rem;
+  padding: 1.4rem 1.2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(127, 0, 255, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(127, 0, 255, 0.4),
+    rgba(15, 23, 42, 0.95)
+  );
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.75);
+}
+
+.comparison-urgency p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.comparison-urgency span {
+  color: #facc15;
+}
+
+.urgency-note {
+  font-size: 0.82rem;
+  opacity: 0.95;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .comparison-cards {
+    grid-template-columns: 1fr; /* Perf card first, then Other card */
+  }
+
+  .other-card {
+    opacity: 0.8;
+  }
+
+  /* Hide pill row on smaller screens so flow is:
+     Perf card (title + list) -> Other card (title + list) */
+  .comparison-pill-row {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .comparison-inner {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+
+  .comp-card {
+    padding-inline: 1.1rem;
+  }
+
+  .comparison-urgency {
+    padding-inline: 1rem;
+  }
+}

@@ -1,0 +1,142 @@
+.blog-page {
+  background: #050014;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 3.5rem 1.5rem 4rem;
+  box-sizing: border-box;
+}
+
+.blog-page-header {
+  max-width: 900px;
+  margin: 0 auto 2.8rem;
+  text-align: left;
+}
+
+.blog-page-tag {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.blog-page-header h1 {
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  margin: 0.6rem 0 0.5rem;
+  color: var(--primary-color);
+}
+
+.blog-page-meta {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Layout */
+
+.blog-page-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 2.1fr);
+  gap: 2.4rem;
+}
+
+/* Aside */
+
+.blog-page-aside {
+  position: relative;
+}
+
+.blog-page-aside-inner {
+  position: sticky;
+  top: 6rem;
+  padding: 1.2rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(127, 0, 255, 0.5);
+  background: radial-gradient(
+      circle at top,
+      rgba(127, 0, 255, 0.35),
+      transparent 60%
+    ),
+    #020617;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
+}
+
+.blog-page-aside-inner .aside-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 0.6rem;
+}
+
+.blog-page-aside-inner ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.blog-page-aside-inner li {
+  margin-bottom: 0.45rem;
+  opacity: 0.95;
+}
+
+/* Body */
+
+.blog-page-body {
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.blog-page-body p {
+  margin-bottom: 1rem;
+}
+
+.blog-page-body em {
+  font-style: italic;
+}
+
+.blog-page-body h2 {
+  font-size: clamp(1.35rem, 2.3vw, 1.9rem);
+  margin: 2rem 0 0.8rem;
+  color: #e9d5ff;
+}
+
+.blog-page-body ul {
+  margin: 0 0 1rem 1.3rem;
+  padding: 0;
+}
+
+.blog-page-body li {
+  margin-bottom: 0.4rem;
+}
+
+/* Author */
+
+.blog-page-author {
+  margin-top: 2.5rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.blog-page-author span {
+  font-weight: 600;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .blog-page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-page-aside-inner {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-page {
+    padding-inline: 1.1rem;
+  }
+}

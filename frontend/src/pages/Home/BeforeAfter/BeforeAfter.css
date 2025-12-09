@@ -1,0 +1,341 @@
+/* BASE */
+.ba-section {
+  background: #050014;
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden; /* prevent any accidental horizontal scroll */
+}
+
+.ba-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 0rem;
+}
+
+/* SCROLL REVEAL (Infos-style) */
+.reveal-ba {
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(6px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.65, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.65, 0.2, 1),
+    filter 0.8s cubic-bezier(0.2, 0.65, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 85ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-ba.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* HEADER */
+.ba-header {
+  text-align: center;
+  margin-bottom: 2.8rem;
+}
+
+.ba-tag {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.ba-header h1 {
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  margin: 0.5rem 0 0.9rem;
+  color: var(--primary-color);
+}
+
+.ba-lead {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  max-width: 720px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* SPLIT GRID */
+.ba-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  align-items: flex-start;
+  margin-bottom: 2.2rem;
+}
+
+/* center dividing line */
+.ba-grid::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 113, 113, 0.7),
+    rgba(127, 0, 255, 0.1),
+    rgba(56, 189, 248, 0.7)
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* COLUMN BASE */
+.ba-column {
+  position: relative;
+  border-radius: 18px;
+  padding: 1.6rem 1.5rem 1.7rem;
+  background: #05000f;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
+}
+
+/* subtle halo */
+.ba-before {
+  background: radial-gradient(
+      circle at top left,
+      rgba(239, 68, 68, 0.18),
+      transparent 55%
+    ),
+    #05000f;
+}
+
+.ba-after {
+  background: radial-gradient(
+      circle at top right,
+      rgba(59, 130, 246, 0.18),
+      transparent 55%
+    ),
+    #05000f;
+}
+
+/* TOP TEXT BLOCK */
+.ba-col-header {
+  margin-bottom: 1rem;
+}
+
+.ba-pill {
+  display: inline-block;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ba-pill-before {
+  border-color: rgba(248, 113, 113, 0.8);
+  color: #fecaca;
+}
+
+.ba-pill-after {
+  border-color: rgba(59, 130, 246, 0.85);
+  color: #bfdbfe;
+}
+
+.ba-col-header h2 {
+  font-size: clamp(1.3rem, 2.1vw, 1.8rem);
+  margin: 0.45rem 0 0.4rem;
+}
+
+.ba-col-sub {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* IMAGE PLACEHOLDERS + IMAGES */
+.ba-photo-placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10; /* keeps it 16:10 on all screens */
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 0.9rem 0 1.2rem;
+  border: 1px dashed rgba(148, 163, 184, 0.7);
+  background: radial-gradient(
+    circle at center,
+    rgba(15, 23, 42, 0.8),
+    #020617
+  );
+}
+
+.ba-photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* crop edges if needed, but no distortion */
+}
+
+/* BEFORE specific tint */
+.ba-photo-placeholder.before {
+  border-color: rgba(248, 113, 113, 0.8);
+}
+
+/* AFTER specific tint */
+.ba-photo-placeholder.after {
+  border-color: rgba(56, 189, 248, 0.9);
+}
+
+/* LISTS */
+.ba-list {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  list-style: disc;
+  padding-left: 1.3rem;
+}
+
+.ba-list li {
+  margin-bottom: 0.5rem;
+}
+
+.ba-list-before {
+  color: rgba(248, 250, 252, 0.88);
+}
+
+.ba-list-after {
+  color: rgba(226, 232, 240, 0.95);
+}
+
+/* MID CTA under comparison */
+.ba-mid-cta {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ba-mid-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8em 2.2em;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ba-mid-cta-button:hover {
+  background: var(--primary-color);
+  color: #05010f;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+}
+
+/* STRIP */
+.ba-strip {
+  margin-bottom: 2.2rem;
+  padding: 1.2rem 1.1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(127, 0, 255, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(127, 0, 255, 0.4),
+    rgba(15, 23, 42, 0.95)
+  );
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.8);
+}
+
+.ba-strip p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.ba-strip span {
+  color: #facc15;
+}
+
+/* BOTTOM CTA */
+.ba-cta {
+  text-align: center;
+}
+
+.ba-cta p {
+  font-size: 0.92rem;
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.ba-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8em 2.2em;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  background: var(--primary-color);
+  color: #05010f;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.75);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ba-cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+  .ba-inner {
+    padding-top: 2.5rem;
+    padding-bottom: 0rem;
+  }
+
+  .ba-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ba-grid::before {
+    display: none; /* hide center line on stacked layout */
+  }
+
+  .ba-column {
+    padding-inline: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ba-inner {
+    padding-inline: 1.2rem;
+  }
+
+  .ba-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .ba-cta-button,
+  .ba-mid-cta-button {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,141 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: transparent(0, 0, 0);
+  z-index: 1000;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Scroll effect */
+.navbar.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.navbar.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Brand */
+.nav-brand a {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Vedrion logo image */
+.nav-logo {
+  height: 36px;        /* tweak if you want it bigger/smaller */
+  width: auto;
+  display: block;
+}
+
+/* Desktop Links */
+.nav-links {
+  flex: 1;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.nav-links ul {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  margin: 0;
+  justify-content: center;
+}
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: var(--accent-color);
+}
+
+/* Right CTA */
+.nav-cta .book-call-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.nav-cta .book-call-btn:hover {
+  background: var(--accent-color);
+  color: #000;
+}
+
+/* Hamburger toggle (mobile only) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.4s ease-in-out;
+  z-index: 1050;
+}
+.mobile-menu.open {
+  right: 0;
+}
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.mobile-menu li {
+  margin: 1.5rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: popUp 0.4s forwards;
+}
+.mobile-menu li:nth-child(1) { animation-delay: 0.1s; }
+.mobile-menu li:nth-child(2) { animation-delay: 0.2s; }
+.mobile-menu li:nth-child(3) { animation-delay: 0.3s; }
+.mobile-menu li:nth-child(4) { animation-delay: 0.4s; }
+.mobile-menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+@keyframes popUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

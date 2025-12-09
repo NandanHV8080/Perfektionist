@@ -1,0 +1,317 @@
+/* Base section */
+.services-section {
+  background: #050014;
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.services-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 0rem;
+}
+
+/* Scroll reveal (Infos-style) */
+.reveal-service {
+  opacity: 0;
+  transform: translateY(25px);
+  filter: blur(6px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.65, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.65, 0.2, 1),
+    filter 0.8s cubic-bezier(0.2, 0.65, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 85ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-service.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Header */
+.services-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.services-tag {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.services-header h2 {
+  font-size: clamp(1.8rem, 3.3vw, 2.5rem);
+  margin: 0.5rem 0 0.8rem;
+  color: var(--primary-color);
+}
+
+.services-lead {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Vertical “path” */
+.services-path {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 2.4rem;
+}
+
+/* Vertical line behind the cards */
+.services-path::before {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(127, 0, 255, 0.9),
+    rgba(127, 0, 255, 0.15)
+  );
+  opacity: 0.9;
+}
+
+/* Individual card */
+.service-card {
+  position: relative;
+  border-radius: 18px;
+  margin-bottom: 1.8rem;
+  padding: 1.6rem 1.6rem 1.5rem;
+  background: radial-gradient(
+      circle at top left,
+      rgba(127, 0, 255, 0.18),
+      transparent 55%
+    ),
+    #05000f;
+  border: 1px solid rgba(127, 0, 255, 0.45);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+}
+
+/* Node on the path line */
+.service-card::before {
+  content: "";
+  position: absolute;
+  left: -1.35rem;
+  top: 1.6rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--primary-color);
+  box-shadow:
+    0 0 0 4px rgba(127, 0, 255, 0.25),
+    0 0 16px rgba(127, 0, 255, 0.9);
+}
+
+/* Top section of card */
+.service-top {
+  margin-bottom: 1rem;
+}
+
+.tier-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.tier-name {
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  margin: 0.35rem 0 0.4rem;
+}
+
+/* Pricing row */
+.tier-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.1rem;
+}
+
+.tier-price {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.tier-price-note {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.tier-tagline {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Body section */
+.service-body {
+  margin-top: 0.5rem;
+}
+
+.service-pill {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 0.8rem;
+}
+
+.service-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  opacity: 0.94;
+  margin-bottom: 0.9rem;
+}
+
+.service-list {
+  list-style: disc;
+  padding-left: 1.3rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.service-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* Initiate download row */
+.service-download-row {
+  margin-top: 1rem;
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 1.4em;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(127, 0, 255, 0.7);
+  background: rgba(127, 0, 255, 0.16);
+  color: #e9ddff;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+}
+
+.download-link:hover {
+  background: rgba(127, 0, 255, 0.32);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.7);
+}
+
+.download-note {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* CTA buttons for Titan / Conqueror */
+.service-cta-row {
+  margin-top: 1.2rem;
+}
+
+.service-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8em 2.1em;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  background: var(--primary-color);
+  color: #05010f;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.service-cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Footer copy */
+.services-footer {
+  margin-top: 2.4rem;
+  text-align: center;
+}
+
+.services-footer p {
+  font-size: 0.92rem;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.services-footer span {
+  color: var(--primary-color);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .services-inner {
+    padding-top: 2.5rem;
+    padding-bottom: 0rem;
+  }
+
+  .services-path {
+    padding-left: 2rem;
+  }
+
+  .service-card {
+    padding-inline: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-inner {
+    padding-inline: 0rem;
+  }
+
+  .services-path {
+    padding-left: 1.8rem;
+  }
+
+  .services-path::before {
+    left: 0.7rem;
+  }
+
+  .service-card::before {
+    left: -1.1rem;
+  }
+
+  .download-link,
+  .service-cta-button {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}

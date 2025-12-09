@@ -1,0 +1,318 @@
+.faq-page {
+  background: #050014;
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(2.5rem, 4vw, 4rem) 1.5rem 0rem;
+  overflow-x: hidden;
+}
+
+.faq-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* -------- Fade-in (fast, Infos-style) -------- */
+/* Pure CSS animation, no JS / IntersectionObserver */
+
+.reveal-faq {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(5px);
+  animation: faqFadeUp 0.6s cubic-bezier(0.2, 0.65, 0.2, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 70ms);
+  will-change: opacity, transform, filter;
+}
+
+@keyframes faqFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* -------- Header -------- */
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 2.6rem;
+}
+
+.faq-tag {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.faq-header h1 {
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  margin: 0.6rem 0 0.6rem;
+  color: var(--primary-color);
+}
+
+.faq-header p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 0.98rem;
+  opacity: 0.9;
+}
+
+/* -------- Grid: Contact (left) · FAQ (right) -------- */
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 1.8rem;
+  align-items: flex-start;
+}
+
+/* -------- Contact panel -------- */
+
+.faq-contact-panel {
+  background: radial-gradient(
+      circle at top left,
+      rgba(127, 0, 255, 0.32),
+      transparent 60%
+    ),
+    #020617;
+  border-radius: 18px;
+  border: 1px solid rgba(127, 0, 255, 0.5);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.75);
+  padding: 1.6rem 1.4rem 1.5rem;
+}
+
+.faq-contact-panel h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.contact-subtext {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 1.2rem;
+}
+
+/* Form */
+
+.faq-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field-group label {
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.field-group input,
+.field-group textarea {
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  padding: 0.65rem 0.75rem;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.field-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.field-group input::placeholder,
+.field-group textarea::placeholder {
+  color: rgba(148, 163, 184, 0.8);
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px rgba(127, 0, 255, 0.85),
+    0 10px 30px rgba(88, 28, 135, 0.7);
+  background: rgba(15, 23, 42, 1);
+}
+
+/* Submit button */
+
+.faq-submit-btn {
+  margin-top: 0.2rem;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  color: #050014;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease, color 0.2s ease;
+}
+
+.faq-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.9);
+}
+
+/* Notes */
+
+.form-note {
+  margin-top: 0.4rem;
+  font-size: 0.76rem;
+  opacity: 0.8;
+}
+
+.form-note.success {
+  color: #4ade80;
+}
+
+/* -------- FAQ Accordion -------- */
+
+.faq-accordion {
+  padding: 0.2rem 0;
+}
+
+.faq-accordion h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.accordion-intro {
+  font-size: 0.9rem;
+  opacity: 0.88;
+  margin-bottom: 1.2rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.faq-item {
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  transition: border 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.faq-item.open {
+  border-color: rgba(127, 0, 255, 0.9);
+  background: radial-gradient(
+      circle at top left,
+      rgba(127, 0, 255, 0.32),
+      transparent 60%
+    ),
+    #020617;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+}
+
+/* Question button */
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 0.8rem 0.9rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-size: 0.92rem;
+}
+
+.faq-question span:first-child {
+  flex: 1;
+}
+
+.faq-question .icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+}
+
+/* Answer – smooth open/close */
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 0.95rem;
+  border-top: 1px solid rgba(148, 163, 184, 0);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  opacity: 0;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease,
+    padding 0.3s ease,
+    border-top-color 0.3s ease;
+}
+
+/* When the item is open, the answer slides down */
+
+.faq-item.open .faq-answer {
+  max-height: 300px; /* big enough for your text */
+  opacity: 0.9;
+  padding: 0.4rem 0.95rem 0.8rem;
+  border-top-color: rgba(148, 163, 184, 0.45);
+}
+
+/* -------- Responsive -------- */
+
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-contact-panel {
+    order: 1;
+  }
+
+  .faq-accordion {
+    order: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-page {
+    padding-inline: 1.2rem;
+  }
+
+  .faq-contact-panel {
+    padding-inline: 1.2rem;
+  }
+
+  .faq-question {
+    padding-inline: 0.8rem;
+  }
+
+  .faq-answer {
+    padding-inline: 0.85rem;
+  }
+}
